@@ -4,4 +4,5 @@ Pillow>=10
 numpy>=1.26
 reportlab>=4
 streamlit>=1.36
-# system packages: tesseract-ocr, poppler-utils (pdftoppm)
+# system packages: tesseract-ocr
+PyMuPDF

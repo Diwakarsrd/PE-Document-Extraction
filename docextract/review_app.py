@@ -26,10 +26,11 @@ left, right = st.columns([1, 1])
 
 with left:
     st.subheader("Source")
-    with tempfile.TemporaryDirectory() as td:
-        subprocess.run(["pdftoppm", "-r", "80", "-png", row["path"], f"{td}/p"], check=False)
-        for img in sorted(Path(td).glob("p-*.png")):
-            st.image(str(img), use_container_width=True)
+    import fitz
+    doc = fitz.open(row["path"])
+    for page in doc:
+        pix = page.get_pixmap(dpi=80)
+        st.image(pix.tobytes("png"), use_container_width=True)
     failed = [c for c in payload["checks"] if not c["passed"]]
     if failed:
         st.error("Failed checks: " + "; ".join(f"{c['name']} ({c['detail']})" for c in failed))
