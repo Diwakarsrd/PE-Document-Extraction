@@ -1,0 +1,263 @@
+{
+  "tau": 0.85,
+  "n_docs": 90,
+  "n_fields": 2588,
+  "field_accuracy": 0.7963678516228748,
+  "field_accuracy_by_tier": {
+    "clean": 1.0,
+    "complex": 0.915651358950328,
+    "noisy": 0.44260204081632654
+  },
+  "field_accuracy_by_doc_type": {
+    "capital_call": 0.841025641025641,
+    "lp_report": 0.770618556701031,
+    "cap_table": 0.8085106382978723
+  },
+  "doc_exact_match": 0.4666666666666667,
+  "doc_exact_by_tier": {
+    "clean": 1.0,
+    "complex": 0.3333333333333333,
+    "noisy": 0.06666666666666667
+  },
+  "classification_accuracy": 1.0,
+  "review_rate": 0.5222222222222221,
+  "auto_approve_doc_precision": 0.9767441860465116,
+  "review_rate_by_tier": {
+    "clean": 0.0,
+    "complex": 0.6666666666666666,
+    "noisy": 0.9
+  },
+  "latency_s": {
+    "p50": 0.025416113999995105,
+    "p95": 10.306113427099978,
+    "mean": 2.644933474722206
+  },
+  "latency_by_tier": {
+    "clean": {
+      "p50": 0.01820220000001882,
+      "p95": 0.024803043550070923
+    },
+    "complex": {
+      "p50": 0.023836822499902155,
+      "p95": 0.04591572920004405
+    },
+    "noisy": {
+      "p50": 7.4495802489999505,
+      "p95": 10.48894250260007
+    }
+  },
+  "cost_usd_per_doc": 0.0,
+  "threshold_sweep": [
+    {
+      "tau": 0.5,
+      "auto_field_share": 0.7758887171561051,
+      "auto_field_precision": 0.9950199203187251
+    },
+    {
+      "tau": 0.6,
+      "auto_field_share": 0.7747295208655333,
+      "auto_field_precision": 0.9955112219451372
+    },
+    {
+      "tau": 0.7,
+      "auto_field_share": 0.7735703245749613,
+      "auto_field_precision": 0.996003996003996
+    },
+    {
+      "tau": 0.8,
+      "auto_field_share": 0.7716383307573416,
+      "auto_field_precision": 0.9964947421131698
+    },
+    {
+      "tau": 0.85,
+      "auto_field_share": 0.768160741885626,
+      "auto_field_precision": 0.9964788732394366
+    },
+    {
+      "tau": 0.9,
+      "auto_field_share": 0.7670015455950541,
+      "auto_field_precision": 0.9964735516372796
+    },
+    {
+      "tau": 0.95,
+      "auto_field_share": 0.3589644513137558,
+      "auto_field_precision": 1.0
+    }
+  ],
+  "auto_field_share": 0.768160741885626,
+  "auto_field_precision": 0.9964788732394366,
+  "worst_fields": [
+    {
+      "doc_type": "lp_report",
+      "field": "holdings.company",
+      "errors": 53,
+      "of": 258,
+      "example": {
+        "expected": "Kestrel Aerospace",
+        "got": null,
+        "file": "docs/noisy_lp_report_00.pdf",
+        "tier": "noisy"
+      }
+    },
+    {
+      "doc_type": "cap_table",
+      "field": "holders.holder",
+      "errors": 50,
+      "of": 236,
+      "example": {
+        "expected": "Bluewater Private Equity",
+        "got": null,
+        "file": "docs/noisy_cap_table_00.pdf",
+        "tier": "noisy"
+      }
+    },
+    {
+      "doc_type": "lp_report",
+      "field": "holdings.cost",
+      "errors": 49,
+      "of": 258,
+      "example": {
+        "expected": 601000,
+        "got": null,
+        "file": "docs/noisy_lp_report_00.pdf",
+        "tier": "noisy"
+      }
+    },
+    {
+      "doc_type": "lp_report",
+      "field": "holdings.fair_value",
+      "errors": 49,
+      "of": 258,
+      "example": {
+        "expected": 1096000,
+        "got": null,
+        "file": "docs/noisy_lp_report_00.pdf",
+        "tier": "noisy"
+      }
+    },
+    {
+      "doc_type": "cap_table",
+      "field": "holders.shares",
+      "errors": 49,
+      "of": 236,
+      "example": {
+        "expected": 233000,
+        "got": null,
+        "file": "docs/noisy_cap_table_00.pdf",
+        "tier": "noisy"
+      }
+    },
+    {
+      "doc_type": "cap_table",
+      "field": "holders.share_class",
+      "errors": 47,
+      "of": 236,
+      "example": {
+        "expected": "Series B Preferred",
+        "got": null,
+        "file": "docs/noisy_cap_table_00.pdf",
+        "tier": "noisy"
+      }
+    },
+    {
+      "doc_type": "cap_table",
+      "field": "holders.pct",
+      "errors": 47,
+      "of": 236,
+      "example": {
+        "expected": 12.17,
+        "got": null,
+        "file": "docs/noisy_cap_table_00.pdf",
+        "tier": "noisy"
+      }
+    },
+    {
+      "doc_type": "capital_call",
+      "field": "cumulative_called",
+      "errors": 17,
+      "of": 30,
+      "example": {
+        "expected": 20049000,
+        "got": null,
+        "file": "docs/complex_capital_call_00.pdf",
+        "tier": "complex"
+      }
+    },
+    {
+      "doc_type": "capital_call",
+      "field": "fund_expenses",
+      "errors": 16,
+      "of": 30,
+      "example": {
+        "expected": 71000,
+        "got": null,
+        "file": "docs/complex_capital_call_00.pdf",
+        "tier": "complex"
+      }
+    },
+    {
+      "doc_type": "capital_call",
+      "field": "unfunded_commitment",
+      "errors": 16,
+      "of": 30,
+      "example": {
+        "expected": 11951000,
+        "got": null,
+        "file": "docs/complex_capital_call_00.pdf",
+        "tier": "complex"
+      }
+    }
+  ],
+  "silent_errors": 7,
+  "silent_error_examples": [
+    {
+      "file": "docs/noisy_capital_call_01.pdf",
+      "key": "management_fee",
+      "exp": 165000,
+      "got": 165000.9,
+      "conf": 0.92
+    },
+    {
+      "file": "docs/noisy_capital_call_01.pdf",
+      "key": "fund_expenses",
+      "exp": 39000,
+      "got": 39006.0,
+      "conf": 0.92
+    },
+    {
+      "file": "docs/noisy_capital_call_09.pdf",
+      "key": "fund_name",
+      "exp": "Atlas Horizon Fund III",
+      "got": "Atlas Horizon Fund Ill",
+      "conf": 0.92
+    },
+    {
+      "file": "docs/noisy_lp_report_00.pdf",
+      "key": "fund_name",
+      "exp": "Bluewater Private Equity III",
+      "got": "Bluewater Private Equity #1",
+      "conf": 0.92
+    },
+    {
+      "file": "docs/noisy_lp_report_09.pdf",
+      "key": "distributions",
+      "exp": 8000000,
+      "got": 6000000.0,
+      "conf": 0.92
+    },
+    {
+      "file": "docs/noisy_cap_table_01.pdf",
+      "key": "company_name",
+      "exp": "Nova Telecom Ltd",
+      "got": "Nova Telecom Lid",
+      "conf": 0.92
+    },
+    {
+      "file": "docs/noisy_cap_table_06.pdf",
+      "key": "holders.holder",
+      "exp": "Oasis Frontier Capital",
+      "got": "Gasis Frontier Capital",
+      "conf": 0.92
+    }
+  ]
+}
