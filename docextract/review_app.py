@@ -30,7 +30,9 @@ left, right = st.columns([1, 1])
 with left:
     st.subheader("Source")
     import fitz
-    doc = fitz.open(row["path"])
+    # Normalize Windows paths for Streamlit Cloud (Linux)
+    safe_path = row["path"].replace("\\", "/")
+    doc = fitz.open(safe_path)
     for page in doc:
         pix = page.get_pixmap(dpi=80)
         st.image(pix.tobytes("png"), use_container_width=True)
