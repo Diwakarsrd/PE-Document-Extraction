@@ -6,6 +6,9 @@ from pathlib import Path
 
 import streamlit as st
 
+import sys
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
 from docextract import store
 from docextract.pipeline import TAU
 
